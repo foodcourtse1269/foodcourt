@@ -10,8 +10,8 @@ namespace WebAdmin.Repositories
 {
     public class BaseRepository<T> where T: class
     {
-        private FoodCourtContext dataContext;
-        private DbSet<T> dbset;
+        protected FoodCourtContext dataContext;
+        protected DbSet<T> dbset;
         public BaseRepository(FoodCourtContext dataContext)
         {
             this.dataContext = dataContext;

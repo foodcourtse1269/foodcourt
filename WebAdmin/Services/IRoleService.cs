@@ -18,6 +18,7 @@ namespace WebAdmin.Services
         RoleDto AddRole(RoleDto roleDto);
         RoleDto UpdateRole(RoleDto roleDto);
         RoleDto DeleteRole(RoleDto roleDto);
+        bool ExistById(int id);
     }
 
     class RoleService : IRoleService
@@ -47,6 +48,11 @@ namespace WebAdmin.Services
             _roleRepo.Delete(role);
             _context.SaveChanges();
             return _mapper.Map<RoleDto>(role);
+        }
+
+        public bool ExistById(int id)
+        {
+            return _roleRepo.ExistById(id);
         }
 
         public List<RoleDto> GetAllRoles()

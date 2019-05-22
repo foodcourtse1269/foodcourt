@@ -11,5 +11,10 @@ namespace WebAdmin.Repositories
         public RoleRepository(FoodCourtContext dataContext) : base(dataContext)
         {
         }
+
+        public bool ExistById(int id)
+        {
+            return dataContext.Role.Any(f => f.Id == id);
+        }
     }
 }

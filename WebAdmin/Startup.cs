@@ -36,9 +36,8 @@ namespace WebAdmin
                 configuration.RootPath = "ClientApp/build";
             });
             services.AddSingleton(Configuration.GetSection("MyConfiguration").Get<MyConfiguration>());
-            //services.AddDbContext<FoodCourtContext>(
-            //    options => options.UseSqlServer("Server=DESKTOP-56I0IC4;Database=foodcourt;User ID=sa;Password=12345678;"));
-            services.AddScoped<FoodCourtContext, FoodCourtContext>();
+            services.AddDbContext<FoodCourtContext>(
+                options => options.UseSqlServer("Server=.;Database=foodcourt;User ID=sa;Password=12345678;"));
             this.addScopedForRepo(services);
             this.addScopedForService(services);
             // Auto Mapper Configurations

@@ -52,7 +52,7 @@ namespace WebAdmin.Controllers
         [HttpPut]
         public ActionResult<RoleDto> UpdateRole(RoleDto roleDto)
         {
-            if (_roleService.GetById(roleDto.Id) == null)
+            if (!_roleService.ExistById(roleDto.Id))
             {
                 return NotFound();
             }
