@@ -33,7 +33,7 @@ namespace WebAdmin
             // In production, the React files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {
-                configuration.RootPath = "ClientApp/build";
+                configuration.RootPath = "clientapp/build";
             });
             services.AddSingleton(Configuration.GetSection("MyConfiguration").Get<MyConfiguration>());
             //services.AddDbContext<FoodCourtContext>(
@@ -100,7 +100,7 @@ namespace WebAdmin
 
             app.UseSpa(spa =>
             {
-                spa.Options.SourcePath = "ClientApp";
+                spa.Options.SourcePath = "clientapp";
 
                 if (env.IsDevelopment())
                 {
